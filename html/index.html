@@ -1,16 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To Do</title>
   <link rel="stylesheet" href="/styles/styles.css">
 </head>
+
 <body>
   <main>
-    <div class="days"></div>
-    <div class="table"></div>
+    <div class="days">
+      <button id="b-1">Satrurday</button>
+      <button id="b-2">Sunday</button>
+      <button id="b-3">Monday</button>
+      <button id="b-4">Tuesday</button>
+      <button id="b-5">Wednesday</button>
+      <button id="b-6">Thursday</button>
+      <button id="b-7">Friday</button>
+    </div>
+    <div class="table">
+      <h2 style="text-align: center;margin: 10px auto;">Tasks</h2>
+      <table class="t-sat">
+        <thead>
+          <tr>
+            <th scope="col" colspan="1" class="col1">No.</th>
+            <th scope="col" colspan="3" class="col2">Tasks</th>
+            <th scope="col" colspan="1" class="col3">Done</th>
+            <th scope="col" colspan="1" class="col4">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="t-sun hidden">
+        <thead>
+          <tr>
+            <th scope="col" colspan="1" class="col1">No.</th>
+            <th scope="col" colspan="3" class="col2">Tasks</th>
+            <th scope="col" colspan="1" class="col3">Done</th>
+            <th scope="col" colspan="1" class="col4">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="t-mon hidden">
+        <thead>
+          <tr>
+            <th scope="col" colspan="1" class="col1">No.</th>
+            <th scope="col" colspan="3" class="col2">Tasks</th>
+            <th scope="col" colspan="1" class="col3">Done</th>
+            <th scope="col" colspan="1" class="col4">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="t-tue hidden">
+        <thead>
+          <tr>
+            <th scope="col" colspan="1" class="col1">No.</th>
+            <th scope="col" colspan="3" class="col2">Tasks</th>
+            <th scope="col" colspan="1" class="col3">Done</th>
+            <th scope="col" colspan="1" class="col4">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="t-wed hidden">
+        <thead>
+          <tr>
+            <th scope="col" colspan="1" class="col1">No.</th>
+            <th scope="col" colspan="3" class="col2">Tasks</th>
+            <th scope="col" colspan="1" class="col3">Done</th>
+            <th scope="col" colspan="1" class="col4">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="t-thu hidden">
+        <thead>
+          <tr>
+            <th scope="col" colspan="1" class="col1">No.</th>
+            <th scope="col" colspan="3" class="col2">Tasks</th>
+            <th scope="col" colspan="1" class="col3">Done</th>
+            <th scope="col" colspan="1" class="col4">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="t-fri hidden">
+        <thead>
+          <tr>
+            <th scope="col" colspan="1" class="col1">No.</th>
+            <th scope="col" colspan="3" class="col2">Tasks</th>
+            <th scope="col" colspan="1" class="col3">Done</th>
+            <th scope="col" colspan="1" class="col4">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="3" class="task-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ex alias
+              ullam
+              cupiditate tenetur itaque, unde perspiciatis explicabo ab odit quasi? Temporibus consequuntur vel optio
+              quod atque voluptates necessitatibus quos?</td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="done" id=""></td>
+            <td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </main>
 </body>
 <script src="/scripts/script.js"></script>
+
 </html>

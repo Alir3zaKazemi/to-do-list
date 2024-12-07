@@ -6,5 +6,70 @@
 
 body{
   width: 98vw;
-  background: rgb(155, 205, 252);
+  background: rgb(186, 221, 255);
+}
+
+main {
+  width: 70%;
+  margin: 30px auto;
+  background: rgb(245, 192, 132);
+  display: flex;
+  flex-direction: column;
+}
+
+.days {
+  display: flex;
+  flex-direction: row;
+}
+
+.days > button {
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.button-back{
+  background-color: rgb(245, 192, 132);
+  border-bottom: none;
+}
+
+.table, table {
+  width: 100%;
+}
+
+.table {
+  padding-bottom: 10%;
+}
+
+.col1, .col3, .col4 {
+  width: 10%;
+}
+
+.col2 {
+  width: 70%;
+}
+
+table tr {
+  height: 10vh;
+}
+
+table th{
+  background-color: rgb(183, 123, 240);
+}
+
+.task-main {
+  background: rgb(252, 121, 193);
+}
+
+.check-cell {
+  text-align: center;
+  background: rgb(218, 252, 138);
+}
+
+.check-cell input:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
