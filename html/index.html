@@ -11,13 +11,13 @@
 <body>
   <main>
     <div class="days">
-      <button id="b-1" class="btn button-back">Satrurday</button>
-      <button class="btn" id="b-2">Sunday</button>
-      <button class="btn" id="b-3">Monday</button>
-      <button class="btn" id="b-4">Tuesday</button>
-      <button class="btn" id="b-5">Wednesday</button>
-      <button class="btn" id="b-6">Thursday</button>
-      <button class="btn" id="b-7">Friday</button>
+      <button id="b-1" class="weekdays-btn button-back">Satrurday</button>
+      <button class="weekdays-btn" id="b-2">Sunday</button>
+      <button class="weekdays-btn" id="b-3">Monday</button>
+      <button class="weekdays-btn" id="b-4">Tuesday</button>
+      <button class="weekdays-btn" id="b-5">Wednesday</button>
+      <button class="weekdays-btn" id="b-6">Thursday</button>
+      <button class="weekdays-btn" id="b-7">Friday</button>
     </div>
     <div class="table">
       <table class="t-sat hidden">
@@ -316,31 +316,34 @@
         </tbody>
       </table>
     </div>
-    <div class="modal">
-      <div class="modal_input">
-        <label for="task-desc" style="margin-bottom: 15px;">Your task description :</label>
-        <textarea name="task-desc" rows="5" id="" style="margin-bottom: 15px; width: 65%;"></textarea>
-        <label for="d-in-week" style="margin-bottom: 15px;">which day ?</label>
-        <select name="d-in-week" id="" style="margin-bottom: 15px;">
-          <optgroup label="Days of week">
-            <option value="0">Saturday</option>
-            <option value="1" selected>Sunday</option>
-            <option value="2">Monday</option>
-            <option value="3">Tuesday</option>
-            <option value="4">Wednesday</option>
-            <option value="5">Thursday</option>
-            <option value="6">Friday</option>
-          </optgroup>
-        </select>
-        <div>
-          <label for="isDone">The task is Done Already !</label>
-          <input type="checkbox" name="isDone" id="isDone">
+    <form class="form" id="form">
+      <div class="modal">
+        <div class="modal_input">
+          <label for="task-description" style="margin-bottom: 15px;">Your task description :</label>
+          <textarea name="task-description" rows="5" id="task-textarea" style="margin-bottom: 15px; width: 65%;"></textarea>
+          <label for="d-in-week" style="margin-bottom: 15px;">which day ?</label>
+          <select name="day-in-week" id="" style="margin-bottom: 15px;">
+            <optgroup label="Days of week">
+              <option value="0">Saturday</option>
+              <option value="1" selected>Sunday</option>
+              <option value="2">Monday</option>
+              <option value="3">Tuesday</option>
+              <option value="4">Wednesday</option>
+              <option value="5">Thursday</option>
+              <option value="6">Friday</option>
+            </optgroup>
+          </select>
+          <div>
+            <label for="isDone">The task is Done Already !</label>
+            <input type="checkbox" name="isDone" id="isDone">
+          </div>
+        </div>
+        <div class="add-task-btn">
+          <button type="button" id="add-btn">Add</button>
         </div>
       </div>
-      <div class="add-task-btn">
-        <button type="button">Add</button>
-      </div>
-    </div>
+    </form>
+    
   </main>
 </body>
 <script src="/scripts/script.js"></script>
