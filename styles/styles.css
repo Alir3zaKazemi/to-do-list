@@ -1,10 +1,10 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   width: 98vw;
   background: rgb(186, 221, 255);
 }
@@ -15,33 +15,51 @@ main {
   background: rgb(245, 192, 132);
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
 }
 
 .days {
   display: flex;
   flex-direction: row;
+  padding-bottom: 20px;
 }
 
-.days > button {
+.days>button {
   width: 100%;
   font-size: 20px;
   padding: 10px;
+  border-style: none;
 }
 
-.button-back{
+.days>button:hover {
+  cursor: pointer;
+}
+
+#b-1 {
+  border-top-left-radius: 10px;
+}
+
+#b-7 {
+  border-top-right-radius: 10px;
+}
+
+.button-back {
   background-color: rgb(245, 192, 132);
   border-bottom: none;
 }
 
-.table, table {
+.table,
+table {
   width: 100%;
 }
 
 .table {
-  padding-bottom: 10%;
+  padding-bottom: 5%;
 }
 
-.col1, .col3, .col4 {
+.col1,
+.col3,
+.col4 {
   width: 10%;
 }
 
@@ -53,12 +71,13 @@ table tr {
   height: 10vh;
 }
 
-table th{
+table th {
   background-color: rgb(183, 123, 240);
 }
 
 .task-main {
   background: rgb(252, 121, 193);
+  padding: 10px;
 }
 
 .check-cell {
