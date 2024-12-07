@@ -1,6 +1,6 @@
 "use strict";
 
-let days = document.getElementsByTagName("button");
+let days = document.getElementsByClassName("btn");
 let tables = document.getElementsByTagName('table');
 
 for (let i = 0; i < days.length; i++) {
