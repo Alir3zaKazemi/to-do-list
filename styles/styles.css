@@ -2,6 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Crimson Pro",
+    serif;;
 }
 
 body {
@@ -132,4 +134,9 @@ table th {
 
 .hidden {
   display: none;
+}
+
+.done {
+  text-decoration: line-through;
+  color: rgb(66, 66, 66);
 }

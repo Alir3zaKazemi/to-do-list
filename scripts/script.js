@@ -5,6 +5,12 @@ let tables = document.getElementsByTagName("TABLE");
 let addTaskBtn = document.getElementById("add-btn");
 let insertedTaskText = document.getElementById("task-textarea");
 let form = document.getElementById("form");
+let clearLocal = document.getElementById("clear");
+
+clear.addEventListener("click", () => {
+	localStorage.clear();
+	location.reload(true);
+});
 
 for (let i = 0; i < days.length; i++) {
 	days[i].addEventListener("click", () => {
@@ -17,9 +23,8 @@ for (let i = 0; i < days.length; i++) {
 	});
 }
 
-let LocalStorageValues = [];
-
 addTaskBtn.addEventListener("click", () => {
+	const LocalStorageValues = JSON.parse(localStorage.getItem("tasks") || "[]");
 	let formData = new FormData(form);
 	let objFormData = Object.fromEntries(formData);
 	let date = Date.now();
@@ -28,26 +33,48 @@ addTaskBtn.addEventListener("click", () => {
 	LocalStorageValues.push(objFormData);
 	localStorage.setItem("tasks", JSON.stringify(LocalStorageValues));
 	showTask();
+	form.reset();
 });
 
-let localData = [];
+let localData;
 let tableRow;
 
 function showTask() {
-	localData = JSON.parse(localStorage.getItem("tasks"));
+	localData = JSON.parse(localStorage.getItem("tasks") || "[]");
+
+	for (let x = 0; x < tables.length; x++) {
+		tables[x].children[1].innerHTML = "";
+	}
+
 	for (let i = 0; i < tables.length; i++) {
-		for (const element of localData) {
+		for (let element of localData) {
 			if (tables[i].className.includes(`${element.dayInWeek}`)) {
-				tables[
-					i
-				].children[1].innerHTML = `<tr><th scope="row">1</th><td colspan="3" class="task-main">${
+				tables[i].children[1].innerHTML += `<tr><th scope="row">${
+					element.id
+				}</th><td colspan="3" class="task-main">${
 					element.taskDescription
-				}</td><td colspan="1" class="check-cell"><input type="checkbox" name="done" id="" ${
+				}</td><td colspan="1" class="check-cell"><input type="checkbox" name="done" id="doneCheck" ${
 					element.isDone == true ? "checked" : null
-				}></td><td colspan="1" class="check-cell"><input type="checkbox" name="delete" id=""></td></tr>
-  `;
+				}></td><td colspan="1" class="check-cell"><button data-id="${
+					element.id
+				}" id="del-button" class="del-button">delete</button></td></tr>`;
 			}
 		}
 	}
+
+	if (localData.length > 0) {
+		let deleteTaskButton = document.getElementsByClassName("del-button");
+		for (let i = 0; i <= deleteTaskButton.length; i++) {
+			deleteTaskButton?.[i]?.addEventListener("click", (e) => {
+				const deletingItemId = e.target.dataset.id;
+				const newLocalData = localData.filter((task) => {
+					return task.id != deletingItemId;
+				});
+				localStorage.setItem("tasks", JSON.stringify(newLocalData));
+				showTask();
+			});
+		}
+	}
 }
+
 showTask();
