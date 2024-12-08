@@ -11,6 +11,7 @@ body {
 
 main {
   width: 70%;
+  min-width: 638px;
   margin: 30px auto;
   display: flex;
   flex-direction: column;
@@ -24,11 +25,12 @@ main {
   background: rgb(245, 192, 132);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  width: 100%;
 }
 
 .days>button {
-  width: 100%;
-  font-size: 20px;
+  width: 14.28571%;
+  font-size: 15px;
   padding: 10px;
   border-style: none;
 }
