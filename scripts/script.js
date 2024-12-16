@@ -7,7 +7,7 @@ let insertedTaskText = document.getElementById("task-textarea");
 let form = document.getElementById("form");
 let clearLocal = document.getElementById("clear");
 
-clear.addEventListener("click", () => {
+clearLocal.addEventListener("click", () => {
 	localStorage.clear();
 	location.reload(true);
 });
@@ -57,7 +57,9 @@ function showTask() {
 					element.isDone == true ? "checked" : null
 				}></td><td colspan="1" class="check-cell"><button data-id="${
 					element.id
-				}" id="del-button" class="del-button">delete</button></td></tr>`;
+				}" id="del-button" class="del-button">delete</button><button data-id="${
+					element.id
+				}" id="edit-button" class="edit-button" onclick="editTask()">Edit</button></td></tr>`;
 			}
 		}
 	}
@@ -74,6 +76,25 @@ function showTask() {
 				showTask();
 			});
 		}
+	}
+}
+
+
+function editTask() {
+	let editTaskButton = document.getElementsByClassName("edit-button");
+	for (let j = 0; j < editTaskButton.length; j++) {
+		editTaskButton?.[j]?.addEventListener("click", (e) => {
+			let newTaskDescription = prompt("Edit task Description:", "nothing");
+			let editingTaskId = e.target.dataset.id;
+			let editedLocalData = localData.map((task) => {
+				if (task.id == editingTaskId) {
+					task.taskDescription = newTaskDescription;
+				}
+				return task;
+			});
+			localStorage.setItem("tasks", JSON.stringify(editedLocalData));
+			showTask();
+		});
 	}
 }
 
