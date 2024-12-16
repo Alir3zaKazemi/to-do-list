@@ -52,6 +52,7 @@ main {
 .button-back {
   background-color: rgb(245, 192, 132);
   border-bottom: none;
+  text-decoration: underline;
 }
 
 .table,

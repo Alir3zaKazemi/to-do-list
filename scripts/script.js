@@ -113,8 +113,9 @@ function editTask() {
 			let editDescription = document.getElementById("task-textarea");
 			editDescription.focus();
 			let submitEdit = document.createElement("button");
-			submitEdit.textContent = "Ok";
+			submitEdit.textContent = "I'm Done Editing";
 			addTaskBtn.insertAdjacentElement("afterend", submitEdit);
+			clearLocal.classList.toggle("hidden");
 			submitEdit.addEventListener("click", (event) => {
 				let editData = new FormData(form);
 				let objEditFormData = Object.fromEntries(editData);
