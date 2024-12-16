@@ -51,10 +51,16 @@ function showTask() {
 			if (tables[i].className.includes(`${element.dayInWeek}`)) {
 				tables[i].children[1].innerHTML += `<tr><th scope="row">${
 					element.id
-				}</th><td colspan="3" class="task-main">${
+				}</th><td colspan="3" ${
+					element.isDone == true
+						? 'class="task-main done"'
+						: 'class="task-main"'
+				}>${
 					element.taskDescription
-				}</td><td colspan="1" class="check-cell"><input type="checkbox" name="done" id="doneCheck" ${
-					element.isDone == true ? "checked" : null
+				}</td><td colspan="1" class="check-cell"><input type="checkbox" data-id="${
+					element.id
+				}" name="done" class="doneCheck" ${
+					element.isDone == true ? "checked" : 'class="doneCheck"'
 				}></td><td colspan="1" class="check-cell"><button data-id="${
 					element.id
 				}" id="del-button" class="del-button">delete</button><button data-id="${
@@ -77,8 +83,14 @@ function showTask() {
 			});
 		}
 	}
-}
 
+	let doneTaskButton = document.getElementsByClassName("doneCheck");
+	for (let i = 0; i < doneTaskButton.length; i++) {
+		doneTaskButton[i].addEventListener("click", (e) => {
+			e.target.parentElement.previousSibling.classList.toggle("done");
+		});
+	}
+}
 
 function editTask() {
 	let editTaskButton = document.getElementsByClassName("edit-button");
