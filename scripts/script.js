@@ -37,11 +37,9 @@ addTaskBtn.addEventListener("click", () => {
 });
 
 let localData;
-let tableRow;
 
 function showTask() {
 	localData = JSON.parse(localStorage.getItem("tasks") || "[]");
-
 	for (let x = 0; x < tables.length; x++) {
 		tables[x].children[1].innerHTML = "";
 	}
@@ -88,24 +86,51 @@ function showTask() {
 	for (let i = 0; i < doneTaskButton.length; i++) {
 		doneTaskButton[i].addEventListener("click", (e) => {
 			e.target.parentElement.previousSibling.classList.toggle("done");
+
+			let dataArr = JSON.parse(localStorage.getItem("tasks"));
+
+			dataArr.map((task) => {
+				if (task.id == e.target.dataset.id) {
+					if (task.isDone == true) {
+						task.isDone = false;
+					} else {
+						task.isDone = true;
+					}
+				}
+			});
+
+			localStorage.clear();
+			localStorage.setItem("tasks", JSON.stringify(dataArr));
 		});
 	}
 }
 
 function editTask() {
 	let editTaskButton = document.getElementsByClassName("edit-button");
+
 	for (let j = 0; j < editTaskButton.length; j++) {
 		editTaskButton?.[j]?.addEventListener("click", (e) => {
-			let newTaskDescription = prompt("Edit task Description:", "nothing");
-			let editingTaskId = e.target.dataset.id;
-			let editedLocalData = localData.map((task) => {
-				if (task.id == editingTaskId) {
-					task.taskDescription = newTaskDescription;
-				}
-				return task;
+			let editDescription = document.getElementById("task-textarea");
+			editDescription.focus();
+			let submitEdit = document.createElement("button");
+			submitEdit.textContent = "Ok";
+			addTaskBtn.insertAdjacentElement("afterend", submitEdit);
+			submitEdit.addEventListener("click", (event) => {
+				let editData = new FormData(form);
+				let objEditFormData = Object.fromEntries(editData);
+
+				let newTaskDescription = objEditFormData.taskDescription;
+				let editingTaskId = e.target.dataset.id;
+				let editedLocalData = localData.map((task) => {
+					if (task.id == editingTaskId) {
+						task.taskDescription = newTaskDescription;
+						task.isDone = false;
+					}
+					return task;
+				});
+				localStorage.setItem("tasks", JSON.stringify(editedLocalData));
+				showTask();
 			});
-			localStorage.setItem("tasks", JSON.stringify(editedLocalData));
-			showTask();
 		});
 	}
 }
